@@ -81,7 +81,7 @@ public class VarastoTest {
     public void vaaraLaittaminen() {
         varasto.lisaaVarastoon(-2);
 
-        assertEquals(0.0, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(1.0, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
