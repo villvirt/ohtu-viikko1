@@ -66,6 +66,32 @@ public class VarastoTest {
     }
 
     @Test
+    public void vaaraOttaminen() {
+        varasto.lisaaVarastoon(8);
+
+        assertEquals(0.0, varasto.otaVarastosta(-2), vertailuTarkkuus);
+    }
+    @Test
+    public void liikaaOttaminen() {
+        varasto.lisaaVarastoon(8);
+
+        assertEquals(8.0, varasto.otaVarastosta(9), vertailuTarkkuus);
+    }
+        @Test
+    public void vaaraLaittaminen() {
+        varasto.lisaaVarastoon(-2);
+
+        assertEquals(0.0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void liikaaLaittaminen() {
+        varasto.lisaaVarastoon(11);
+
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
     public void konstr() {
         varasto = new Varasto(-1);
         varasto = new Varasto(0);
